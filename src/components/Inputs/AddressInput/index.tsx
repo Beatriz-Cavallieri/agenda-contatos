@@ -5,6 +5,7 @@ import { TextButton, RemoveButtonSC } from '../../Button';
 import { useState } from 'react';
 import { Header3 } from '../../Headers';
 import { Card } from '../../Card';
+import { AddressGridSC } from './styles';
 
 interface IAddressInput extends Address {
     onChange: (address: Address) => void;
@@ -79,65 +80,67 @@ const AddressInput = (props: IAddressInput) => {
                     Buscar endereço
                 </TextButton>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <LabelSC htmlFor={`street-${index}`}>Rua*</LabelSC>
-                <InputSC
-                    required
-                    type="text"
-                    id={`street-${index}`}
-                    name="street"
-                    value={street}
-                    onChange={handleInputChange} />
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <LabelSC htmlFor={`number-${index}`}>Número*</LabelSC>
-                <InputSC
-                    required
-                    type="text"
-                    id={`number-${index}`}
-                    name="number"
-                    value={number}
-                    onChange={handleInputChange} />
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <LabelSC htmlFor={`complement-${index}`}>Complemento:</LabelSC>
-                <InputSC
-                    type="text"
-                    id={`complement-${index}`}
-                    name="complement"
-                    value={complement}
-                    onChange={handleInputChange} />
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <LabelSC htmlFor={`neighborhood-${index}`}>Bairro*</LabelSC>
-                <InputSC
-                    required
-                    type="text"
-                    id={`neighborhood-${index}`}
-                    name="neighborhood"
-                    value={neighborhood}
-                    onChange={handleInputChange} />
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <LabelSC htmlFor={`city-${index}`}>Cidade*</LabelSC>
-                <InputSC
-                    required
-                    type="text"
-                    id={`city-${index}`}
-                    name="city"
-                    value={city}
-                    onChange={handleInputChange} />
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <LabelSC htmlFor={`state-${index}`}>Estado*</LabelSC>
-                <InputSC
-                    required
-                    type="text"
-                    id={`state-${index}`}
-                    name="state"
-                    value={state}
-                    onChange={handleInputChange} />
-            </div>
+            <AddressGridSC>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <LabelSC htmlFor={`street-${index}`}>Rua*</LabelSC>
+                    <InputSC
+                        required
+                        type="text"
+                        id={`street-${index}`}
+                        name="street"
+                        value={street}
+                        onChange={handleInputChange} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <LabelSC htmlFor={`number-${index}`}>Número*</LabelSC>
+                    <InputSC
+                        required
+                        type="text"
+                        id={`number-${index}`}
+                        name="number"
+                        value={number}
+                        onChange={handleInputChange} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <LabelSC htmlFor={`complement-${index}`}>Complemento:</LabelSC>
+                    <InputSC
+                        type="text"
+                        id={`complement-${index}`}
+                        name="complement"
+                        value={complement}
+                        onChange={handleInputChange} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <LabelSC htmlFor={`neighborhood-${index}`}>Bairro*</LabelSC>
+                    <InputSC
+                        required
+                        type="text"
+                        id={`neighborhood-${index}`}
+                        name="neighborhood"
+                        value={neighborhood}
+                        onChange={handleInputChange} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <LabelSC htmlFor={`city-${index}`}>Cidade*</LabelSC>
+                    <InputSC
+                        required
+                        type="text"
+                        id={`city-${index}`}
+                        name="city"
+                        value={city}
+                        onChange={handleInputChange} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <LabelSC htmlFor={`state-${index}`}>Estado*</LabelSC>
+                    <InputSC
+                        required
+                        type="text"
+                        id={`state-${index}`}
+                        name="state"
+                        value={state}
+                        onChange={handleInputChange} />
+                </div>
+            </AddressGridSC>
         </Card >
     );
 };
