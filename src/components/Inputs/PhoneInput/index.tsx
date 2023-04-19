@@ -1,6 +1,7 @@
 import { Phone, PhoneType } from '../../../types/phone';
 import { InputSC, LabelSC } from '../../../pages/CreateContact/styles';
-import { PhoneInputSC, RemoveButtonSC } from './styles';
+import { PhoneInputSC } from './styles';
+import { RemoveButtonSC } from '../../Button';
 
 interface IPhoneInput extends Phone {
     onChange: (phone: Phone) => void;
@@ -39,7 +40,11 @@ const PhoneInput = (props: IPhoneInput) => {
                     onChange={handleNumberChange}
                 />
             </LabelSC>
-            <RemoveButtonSC onClick={onRemove}>X</RemoveButtonSC>
+            <RemoveButtonSC
+                aria-label='Remover telefone'
+                onClick={onRemove}>
+                x
+            </RemoveButtonSC>
         </PhoneInputSC>
     );
 };

@@ -6,6 +6,7 @@ import api from '../../services/api';
 import { v4 as uuidv4 } from 'uuid';
 import { FormSC, InputSC, LabelSC, SubmitButtonSC } from './styles';
 import PhoneInput from '../../components/Inputs/PhoneInput';
+import { AddButtonSC } from '../../components/Button';
 
 const CreateContact = () => {
     const initialAddress: Address = { cep: '', city: '', neighborhood: '', number: '', state: '', street: '' }
@@ -61,7 +62,15 @@ const CreateContact = () => {
                 />
             </LabelSC>
 
-            <h3>Telefone(s)</h3>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <h3>Telefone(s)</h3>
+                <AddButtonSC
+                    aria-label='Adicionar telefone'
+                    type="button"
+                    onClick={handleAddPhone}>
+                    +
+                </AddButtonSC>
+            </div>
 
             {(phones.length ? phones : [initialPhone])
                 .map((phone, index) => (
@@ -74,9 +83,6 @@ const CreateContact = () => {
                     />
                 ))}
 
-            <button type="button" onClick={handleAddPhone}>
-                Adicionar telefone
-            </button>
 
 
             <SubmitButtonSC type="submit">Submit</SubmitButtonSC>
