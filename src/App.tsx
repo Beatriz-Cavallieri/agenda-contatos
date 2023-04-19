@@ -6,7 +6,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <h1>Contatos</h1>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/create" element={<CreateContact />} />

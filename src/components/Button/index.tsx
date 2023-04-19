@@ -12,14 +12,18 @@ export const Button = styled.button`
 `;
 
 export const RoundButtonSC = styled.button`
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   border: none;
   background-color: #3cba54;
   color: white;
   font-weight: bold;
   border-radius: 50%;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 0.5rem;
 `;
 
 export const RemoveButtonSC = styled(RoundButtonSC)`

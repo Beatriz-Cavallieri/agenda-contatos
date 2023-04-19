@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { FormSC, InputSC, LabelSC, SubmitButtonSC } from './styles';
 import PhoneInput from '../../components/Inputs/PhoneInput';
 import { AddButtonSC } from '../../components/Button';
+import AddressInput from '../../components/Inputs/AddressInput';
 
 const CreateContact = () => {
     const initialAddress: Address = { cep: '', city: '', neighborhood: '', number: '', state: '', street: '' }
@@ -34,6 +35,23 @@ const CreateContact = () => {
         const newPhones = [...phones];
         newPhones.splice(index, 1);
         setPhones(newPhones);
+    };
+
+
+    const handleAddAddress = () => {
+        setAddresses([...addresses, initialAddress]);
+    };
+
+    const handleAddressChange = (index: number, address: Address) => {
+        const newAddresses = [...addresses];
+        newAddresses[index] = address;
+        setAddresses(newAddresses);
+    };
+
+    const handleRemoveAddress = (index: number) => {
+        const newAddresses = [...addresses];
+        newAddresses.splice(index, 1);
+        setAddresses(newAddresses);
     };
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -85,16 +103,25 @@ const CreateContact = () => {
                             onRemove={() => handleRemovePhone(index)} />
                     ))}
 
-            {(phones.length ? phones : [initialPhone])
-                .map((phone, index) => (
-                    <PhoneInput
-                        key={index}
-                        type={phone.type}
-                        number={phone.number}
-                        onChange={(phone) => handlePhoneChange(index, phone)}
-                        onRemove={() => handleRemovePhone(index)}
-                    />
-                ))}
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <h2>Endereços</h2>
+                    <AddButtonSC
+                        aria-label='Adicionar telefone'
+                        type="button"
+                        onClick={handleAddAddress}>
+                        +
+                    </AddButtonSC>
+                </div>
+
+                {(addresses.length ? addresses : [initialAddress])
+                    .map((address, index) => (
+                        <AddressInput
+                            key={index}
+                            {...address}
+                            index={index}
+                            onChange={(value) => handleAddressChange(index, value)}
+                            onRemove={() => handleRemoveAddress(index)} />
+                    ))}
 
 
 
