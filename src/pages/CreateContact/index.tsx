@@ -4,9 +4,9 @@ import { Phone } from '../../types/phone';
 import { IContact } from '../../types/contact';
 import api from '../../services/api';
 import { v4 as uuidv4 } from 'uuid';
-import { FormSC, InputSC, LabelSC, SubmitButtonSC } from './styles';
+import { FormSC, InputSC, LabelSC } from './styles';
 import PhoneInput from '../../components/Inputs/PhoneInput';
-import { AddButtonSC } from '../../components/Button';
+import { AddButtonSC, SubmitButtonSC } from '../../components/Button/styles';
 import AddressInput from '../../components/Inputs/AddressInput';
 
 const CreateContact = () => {

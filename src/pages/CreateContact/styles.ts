@@ -15,13 +15,3 @@ export const InputSC = styled.input`
   padding: 5px;
   margin: 5px;
 `;
-
-
-export const SubmitButtonSC = styled.button`
-  padding: 1rem;
-  margin: 20px;
-  background-color: blue;
-  color: white;
-  border: none;
-  border-radius: 5px;
-`;

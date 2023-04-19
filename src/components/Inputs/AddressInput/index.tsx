@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { InputSC, LabelSC } from '../../../pages/CreateContact/styles';
 import { Address } from '../../../types/address';
-import { Button, RemoveButtonSC } from '../../Button';
+import { Button, RemoveButtonSC } from '../../Button/styles';
 import { AddressInputSC } from './styles';
 import { useState } from 'react';
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import api from '../../services/api';
-import ContatInfo from '../../components/ContactInfo';
+import ContactInfo from '../../components/ContactInfo';
 import { IContact } from '../../types/contact';
 import { Link } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ const Homepage = () => {
         <div>
             <h1>Contatos</h1>
             <Link to={'/create'}>Criar contato</Link>
-            {contacts && contacts.map(contact => <ContatInfo {...contact} />)}
+            {contacts && contacts.map(contact => <ContactInfo {...contact} />)}
         </div>
     )
 }

@@ -1,21 +1,27 @@
 import styled from "styled-components";
 
+export const SubmitButtonSC = styled.button`
+  background-color: #345782;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 20px 0;
+`;
+
 export const Button = styled.button`
-  background-color: white;
-  border: 1px solid black;
-  padding:0 2rem;
+  background-color: #345782;
+  color: white;
+  border: none;
   border-radius: 2rem;
   height: 2rem;
-  color: black;
   align-items: center;
   margin: 1rem 0;
 `;
-
 export const RoundButtonSC = styled.button`
   width: 26px;
   height: 26px;
   border: none;
-  background-color: #3cba54;
   color: white;
   font-weight: bold;
   border-radius: 50%;
@@ -41,3 +47,19 @@ export const AddButtonSC = styled(RoundButtonSC)`
     background-color: #2c974b;
   }
 `;
+
+
+export const ViewMoreButton = styled.button`
+  background-color: #345782;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+`;
+
+
+
+
+
