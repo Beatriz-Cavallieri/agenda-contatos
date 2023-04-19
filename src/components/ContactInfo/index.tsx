@@ -1,6 +1,7 @@
 import React from 'react';
 import { IContact } from '../../types/contact';
-import { InfoWrapperSC, ContactNameSC, ContactTitleSC, CircleSC, ContactH3SC } from './styles';
+import { ContactNameSC, ContactTitleSC, CircleSC, ContactH3SC } from './styles';
+import { PHONE_TYPES_PT_BR } from '../../types/phone';
 
 const ContatInfo = (props: IContact) => {
     return (
@@ -23,9 +24,9 @@ const ContatInfo = (props: IContact) => {
             </ul>
             <ContactH3SC>Telefones:</ContactH3SC>
             <ul>
-                {props.phones.map((phone, index) => (
+                {props.phones.map((phone) => (
                     <li key={phone.number}>
-                        <p>{phone.type}: {phone.number}</p>
+                        <p>{PHONE_TYPES_PT_BR[phone.type]}: {phone.number}</p>
                     </li>
                 ))}
             </ul>

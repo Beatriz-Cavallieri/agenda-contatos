@@ -25,11 +25,11 @@
             ],
             "phones": [
                 {
-                    "type": "celular",
+                    "type": "mobile",
                     "number": "(11) 99999-9999"
                 },
                 {
-                    "type": "fixo",
+                    "type": "home",
                     "number": "(11) 3333-3333"
                 }
             ]
@@ -50,7 +50,7 @@
             ],
             "phones": [
                 {
-                    "type": "celular",
+                    "type": "mobile",
                     "number": "(11) 98888-8888"
                 }
             ]
@@ -71,11 +71,11 @@
             ],
             "phones": [
                 {
-                    "type": "celular",
+                    "type": "mobile",
                     "number": "(21) 99999-9999"
                 },
                 {
-                    "type": "fixo",
+                    "type": "work",
                     "number": "(21) 2222-2222"
                 }
             ]
