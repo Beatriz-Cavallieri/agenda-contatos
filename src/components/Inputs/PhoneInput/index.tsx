@@ -3,6 +3,7 @@ import { InputSC, LabelSC } from '../../../pages/CreateContact/styles';
 import { PhoneInputSC } from './styles';
 import { RemoveButtonSC } from '../../Button';
 import { Header3 } from '../../Headers';
+import { Card } from '../../Card';
 
 interface IPhoneInput extends Phone {
     onChange: (phone: Phone) => void;
@@ -21,7 +22,7 @@ const PhoneInput = (props: IPhoneInput) => {
         onChange({ ...props, number: e.target.value });
     };
     return (
-        <PhoneInputSC>
+        <Card>
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Header3>Telefone {index + 1}</Header3>
                 {index > 0 && <RemoveButtonSC
@@ -32,27 +33,34 @@ const PhoneInput = (props: IPhoneInput) => {
                 </RemoveButtonSC>
                 }
             </div>
-            <LabelSC>
-                Tipo de telefone:
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <LabelSC htmlFor='type'>
+                    Tipo de telefone*
+                </LabelSC>
                 <select
+                    required
+                    id={`type-${index}`}
                     value={type}
                     onChange={handleTypeChange}
-                    required>
+                >
                     <option value={"mobile" as PhoneType}>Celular</option>
                     <option value={"home" as PhoneType}>Casa</option>
                     <option value={"work" as PhoneType}>Trabalho</option>
                 </select>
-            </LabelSC>
-            <LabelSC>
-                Número:
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <LabelSC htmlFor='"phone-number"'>
+                    Número*
+                </LabelSC>
                 <InputSC
                     required
+                    id={`phone-number-${index}`}
                     type="text"
                     value={number}
                     onChange={handleNumberChange}
                 />
-            </LabelSC>
-        </PhoneInputSC>
+            </div>
+        </Card >
     );
 };
 

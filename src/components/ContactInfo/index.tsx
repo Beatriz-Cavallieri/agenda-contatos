@@ -1,9 +1,10 @@
 import { IContact } from '../../types/contact';
-import { ContactNameSC, ContactTitleSC, CircleSC, ContactDetailsSC } from './styles';
+import { ContactNameSC, ContactTitleSC, CircleSC } from './styles';
 import { PHONE_TYPES_PT_BR } from '../../types/phone';
 import { useState } from 'react';
 import { TextButton } from '../Button';
 import { Header3 } from '../Headers';
+import { Card } from '../Card';
 
 const ContactInfo = (props: IContact) => {
 
@@ -23,7 +24,7 @@ const ContactInfo = (props: IContact) => {
                     type="button" onClick={handleExpand}>{expanded ? "Ver menos" : "Ver mais"}</TextButton>
             </ContactTitleSC>
             {expanded && (
-                <ContactDetailsSC>
+                <Card>
                     <Header3>Endereços:</Header3>
                     <ul>
                         {props.addresses.map((address, index) => (
@@ -41,7 +42,7 @@ const ContactInfo = (props: IContact) => {
                             </li>
                         ))}
                     </ul>
-                </ContactDetailsSC>
+                </Card>
             )}
         </div>
     );

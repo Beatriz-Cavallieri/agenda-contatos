@@ -2,9 +2,9 @@ import axios from 'axios';
 import { InputSC, LabelSC } from '../../../pages/CreateContact/styles';
 import { Address } from '../../../types/address';
 import { TextButton, RemoveButtonSC } from '../../Button';
-import { AddressInputSC } from './styles';
 import { useState } from 'react';
 import { Header3 } from '../../Headers';
+import { Card } from '../../Card';
 
 interface IAddressInput extends Address {
     onChange: (address: Address) => void;
@@ -53,7 +53,7 @@ const AddressInput = (props: IAddressInput) => {
     };
 
     return (
-        <AddressInputSC>
+        <Card>
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Header3>Endereço {index + 1}</Header3>
                 {index > 0 && <RemoveButtonSC
@@ -64,23 +64,23 @@ const AddressInput = (props: IAddressInput) => {
                 </RemoveButtonSC>
                 }
             </div>
-            <div style={{ display: 'flex' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <LabelSC htmlFor={`cep-${index}`}>
-                    CEP:*
-                    <InputSC
-                        required
-                        type="text"
-                        id={`cep-${index}`}
-                        value={cep}
-                        onChange={(event) => setCep(event.target.value)}
-                    />
+                    CEP*
                 </LabelSC>
+                <InputSC
+                    required
+                    type="text"
+                    id={`cep-${index}`}
+                    value={cep}
+                    onChange={(event) => setCep(event.target.value)}
+                />
                 <TextButton type="button" onClick={findAddress}>
                     Buscar endereço
                 </TextButton>
             </div>
-            <div>
-                <LabelSC htmlFor={`street-${index}`}>Rua:*</LabelSC>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <LabelSC htmlFor={`street-${index}`}>Rua*</LabelSC>
                 <InputSC
                     required
                     type="text"
@@ -89,8 +89,8 @@ const AddressInput = (props: IAddressInput) => {
                     value={street}
                     onChange={handleInputChange} />
             </div>
-            <div>
-                <LabelSC htmlFor={`number-${index}`}>Número:*</LabelSC>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <LabelSC htmlFor={`number-${index}`}>Número*</LabelSC>
                 <InputSC
                     required
                     type="text"
@@ -99,7 +99,7 @@ const AddressInput = (props: IAddressInput) => {
                     value={number}
                     onChange={handleInputChange} />
             </div>
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <LabelSC htmlFor={`complement-${index}`}>Complemento:</LabelSC>
                 <InputSC
                     type="text"
@@ -108,8 +108,8 @@ const AddressInput = (props: IAddressInput) => {
                     value={complement}
                     onChange={handleInputChange} />
             </div>
-            <div>
-                <LabelSC htmlFor={`neighborhood-${index}`}>Bairro:*</LabelSC>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <LabelSC htmlFor={`neighborhood-${index}`}>Bairro*</LabelSC>
                 <InputSC
                     required
                     type="text"
@@ -118,8 +118,8 @@ const AddressInput = (props: IAddressInput) => {
                     value={neighborhood}
                     onChange={handleInputChange} />
             </div>
-            <div>
-                <LabelSC htmlFor={`city-${index}`}>Cidade:*</LabelSC>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <LabelSC htmlFor={`city-${index}`}>Cidade*</LabelSC>
                 <InputSC
                     required
                     type="text"
@@ -128,8 +128,8 @@ const AddressInput = (props: IAddressInput) => {
                     value={city}
                     onChange={handleInputChange} />
             </div>
-            <div>
-                <LabelSC htmlFor={`state-${index}`}>Estado:*</LabelSC>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <LabelSC htmlFor={`state-${index}`}>Estado*</LabelSC>
                 <InputSC
                     required
                     type="text"
@@ -138,7 +138,7 @@ const AddressInput = (props: IAddressInput) => {
                     value={state}
                     onChange={handleInputChange} />
             </div>
-        </AddressInputSC >
+        </Card >
     );
 };
 

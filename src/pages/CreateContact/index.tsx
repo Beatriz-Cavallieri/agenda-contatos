@@ -10,6 +10,7 @@ import { AddButtonSC, ColorButton } from '../../components/Button';
 import AddressInput from '../../components/Inputs/AddressInput';
 import { PageWrapper } from '../../components/PageWrapper';
 import { Header1, Header2 } from '../../components/Headers';
+import { Card } from '../../components/Card';
 
 const CreateContact = () => {
     const initialAddress: Address = { cep: '', city: '', neighborhood: '', number: '', state: '', street: '' }
@@ -24,7 +25,7 @@ const CreateContact = () => {
     };
 
     const handleAddPhone = () => {
-        setPhones([...phones, initialPhone]);
+        setPhones([...phones, { ...initialPhone }]);
     };
 
     const handlePhoneChange = (index: number, phone: Phone) => {
@@ -35,13 +36,13 @@ const CreateContact = () => {
 
     const handleRemovePhone = (index: number) => {
         const newPhones = [...phones];
-        newPhones.splice(index, Header1);
+        newPhones.splice(index, 1);
         setPhones(newPhones);
     };
 
 
     const handleAddAddress = () => {
-        setAddresses([...addresses, initialAddress]);
+        setAddresses([...addresses, { ...initialAddress }]);
     };
 
     const handleAddressChange = (index: number, address: Address) => {
@@ -52,7 +53,7 @@ const CreateContact = () => {
 
     const handleRemoveAddress = (index: number) => {
         const newAddresses = [...addresses];
-        newAddresses.splice(index, Header1);
+        newAddresses.splice(index, 1);
         setAddresses(newAddresses);
     };
 
@@ -74,17 +75,22 @@ const CreateContact = () => {
         <PageWrapper>
             <Header1>Criar contato</Header1>
             <FormSC onSubmit={handleSubmit}>
-                <Header2>Nome</Header2>
-                <LabelSC>
-                    Nome:
-                    <InputSC
-                        required
-                        type="text"
-                        value={name}
-                        onChange={handleNameChange} />
-                </LabelSC>
+                <Header2>Principal</Header2>
+                <Card>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <LabelSC htmlFor='name'>
+                            Nome*
+                        </LabelSC>
+                        <InputSC
+                            required
+                            type="text"
+                            id="name"
+                            value={name}
+                            onChange={handleNameChange} />
+                    </div>
+                </Card>
 
-                <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div style={{ display: 'flex' }}>
                     <Header2>Telefones</Header2>
                     <AddButtonSC
                         aria-label='Adicionar telefone'
