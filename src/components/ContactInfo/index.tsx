@@ -1,9 +1,9 @@
 import { IContact } from '../../types/contact';
-import { ContactNameSC, ContactTitleSC, CircleSC } from './styles';
+import { ContactTitleSC, CircleSC } from './styles';
 import { PHONE_TYPES_PT_BR } from '../../types/phone';
 import { useState } from 'react';
 import { TextButton } from '../Button';
-import { Header3 } from '../Headers';
+import { Header2, Header3 } from '../Headers';
 import { Card } from '../Card';
 
 const ContactInfo = (props: IContact) => {
@@ -19,7 +19,7 @@ const ContactInfo = (props: IContact) => {
                 <CircleSC color='#345782'>
                     {props.name[0]}
                 </CircleSC>
-                <ContactNameSC>{props.name}</ContactNameSC>
+                <Header2>{props.name}</Header2>
                 <TextButton
                     type="button" onClick={handleExpand}>{expanded ? "Ver menos" : "Ver mais"}</TextButton>
             </ContactTitleSC>

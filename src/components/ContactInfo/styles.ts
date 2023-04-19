@@ -28,17 +28,3 @@ margin: 0 0 1rem 0;
 }
 `;
 
-
-
-export const InfoWrapperSC = styled.div`
-  display: flex ;
-  flex-direction: column ;
-`;
-
-export const ContactNameSC = styled.h2`
-  padding: 0;
-  margin: 0;
-  line-height: 1.5rem;
-  font-size: 1.5rem;
-`;
-
