@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import api from '../services/api';
-import { IContact } from '../types/Icontact';
-import ContatInfo from '../components/ContactInfo';
+import api from '../../services/api';
+import ContatInfo from '../../components/ContactInfo';
+import { IContact } from '../../types/contact';
 
 
 const Homepage = () => {
@@ -15,7 +15,7 @@ const Homepage = () => {
         loadContacts();
     }, []);
     return (
-        <div>Homepage
+        <div>
             {contacts && contacts.map(contact => <ContatInfo {...contact} />)}
         </div>
     )

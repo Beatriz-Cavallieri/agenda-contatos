@@ -1,23 +1,27 @@
 import React from 'react';
-import { IContact } from '../../types/Icontact';
+import { IContact } from '../../types/contact';
+import { InfoWrapperSC, ContactNameSC, ContactTitleSC, CircleSC, ContactH3SC } from './styles';
 
 const ContatInfo = (props: IContact) => {
     return (
         <div>
-            <h2>{props.name}</h2>
-            <h3>Endereços:</h3>
+            <ContactTitleSC>
+                <CircleSC color='#345782'>
+                    {props.name[0]}
+                </CircleSC>
+                <ContactNameSC>{props.name}</ContactNameSC>
+            </ContactTitleSC>
+            <ContactH3SC>Endereços:</ContactH3SC>
             <ul>
                 {props.addresses.map((address, index) => (
                     <li key={index}>
-                        <p>{address.street}, {address.number}</p>
-                        <p>{address.complement}</p>
-                        <p>{address.neighborhood}</p>
-                        <p>{address.city} - {address.state}</p>
-                        <p>{address.cep}</p>
+                        <p>{address.street}, {address.number}, {address.complement}</p>
+                        <p>{address.neighborhood}, {address.city} - {address.state}</p>
+                        <p>CEP {address.cep}</p>
                     </li>
                 ))}
             </ul>
-            <h3>phones:</h3>
+            <ContactH3SC>Telefones:</ContactH3SC>
             <ul>
                 {props.phones.map((phone, index) => (
                     <li key={phone.number}>
