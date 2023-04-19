@@ -1,11 +1,25 @@
-Para instalar as dependências:
+# Como instalar e executar o projeto
 
+## Instalação das dependências
+
+Para instalar as dependências, utilize o gerenciador de pacotes yarn:
+
+```bash
 yarn
+``` 
 
-Para iniciar o servidor:
+## Execução do servidor
 
-yarn server
+Para iniciar o servidor, execute o seguinte comando:
 
-Para rodar o projeto em dev:
+```bash
+yarn server 
+``` 
 
+## Execução em modo de desenvolvimento
+
+Para rodar o projeto em modo de desenvolvimento, utilize o seguinte comando:
+
+```bash
 yarn dev
+```
