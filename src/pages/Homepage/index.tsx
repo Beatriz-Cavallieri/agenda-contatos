@@ -3,6 +3,8 @@ import api from '../../services/api';
 import ContactInfo from '../../components/ContactInfo';
 import { IContact } from '../../types/contact';
 import { Link } from 'react-router-dom';
+import { ColorButton } from '../../components/Button';
+import { PageWrapper } from '../../components/PageWrapper';
 
 
 const Homepage = () => {
@@ -16,11 +18,15 @@ const Homepage = () => {
         loadContacts();
     }, []);
     return (
-        <div>
+        <PageWrapper>
             <h1>Contatos</h1>
-            <Link to={'/create'}>Criar contato</Link>
+            <Link to={'/create'}>
+                <ColorButton>
+                    + Criar contato
+                </ColorButton>
+            </Link>
             {contacts && contacts.map(contact => <ContactInfo {...contact} />)}
-        </div>
+        </PageWrapper>
     )
 }
 

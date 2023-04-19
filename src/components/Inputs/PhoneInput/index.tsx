@@ -1,7 +1,7 @@
 import { Phone, PhoneType } from '../../../types/phone';
 import { InputSC, LabelSC } from '../../../pages/CreateContact/styles';
 import { PhoneInputSC } from './styles';
-import { RemoveButtonSC } from '../../Button/styles';
+import { RemoveButtonSC } from '../../Button';
 
 interface IPhoneInput extends Phone {
     onChange: (phone: Phone) => void;

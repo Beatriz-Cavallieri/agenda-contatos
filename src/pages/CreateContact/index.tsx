@@ -6,8 +6,9 @@ import api from '../../services/api';
 import { v4 as uuidv4 } from 'uuid';
 import { FormSC, InputSC, LabelSC } from './styles';
 import PhoneInput from '../../components/Inputs/PhoneInput';
-import { AddButtonSC, SubmitButtonSC } from '../../components/Button/styles';
+import { AddButtonSC, ColorButton } from '../../components/Button';
 import AddressInput from '../../components/Inputs/AddressInput';
+import { PageWrapper } from '../../components/PageWrapper';
 
 const CreateContact = () => {
     const initialAddress: Address = { cep: '', city: '', neighborhood: '', number: '', state: '', street: '' }
@@ -69,7 +70,7 @@ const CreateContact = () => {
         onSubmit(newContact);
     }
     return (
-        <>
+        <PageWrapper>
             <h1>Criar contato</h1>
             <FormSC onSubmit={handleSubmit}>
                 <h2>Nome</h2>
@@ -125,8 +126,9 @@ const CreateContact = () => {
 
 
 
-                <SubmitButtonSC type="submit">Submit</SubmitButtonSC>
-            </FormSC></>
+                <ColorButton type="submit">Submit</ColorButton>
+            </FormSC>
+        </PageWrapper>
     )
 }
 

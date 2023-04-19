@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { InputSC, LabelSC } from '../../../pages/CreateContact/styles';
 import { Address } from '../../../types/address';
-import { Button, RemoveButtonSC } from '../../Button/styles';
+import { TextButton, RemoveButtonSC } from '../../Button';
 import { AddressInputSC } from './styles';
 import { useState } from 'react';
 
@@ -74,9 +74,9 @@ const AddressInput = (props: IAddressInput) => {
                         onChange={(event) => setCep(event.target.value)}
                     />
                 </LabelSC>
-                <Button type="button" onClick={findAddress}>
+                <TextButton type="button" onClick={findAddress}>
                     Buscar endereço
-                </Button>
+                </TextButton>
             </div>
             <div>
                 <LabelSC htmlFor={`street-${index}`}>Rua:*</LabelSC>

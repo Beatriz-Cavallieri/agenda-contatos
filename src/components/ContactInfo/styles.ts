@@ -39,3 +39,10 @@ export const ContactH3SC = styled.h3`
   line-height: 1.25rem;
   font-size: 1.25rem;
 `;
+
+export const ContactDetailsSC = styled.div`
+  border: 1px solid #5656c1;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+`;
