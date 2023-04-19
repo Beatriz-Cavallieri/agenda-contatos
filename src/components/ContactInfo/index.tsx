@@ -1,8 +1,9 @@
 import { IContact } from '../../types/contact';
-import { ContactNameSC, ContactTitleSC, CircleSC, ContactH3SC, ContactDetailsSC } from './styles';
+import { ContactNameSC, ContactTitleSC, CircleSC, ContactDetailsSC } from './styles';
 import { PHONE_TYPES_PT_BR } from '../../types/phone';
 import { useState } from 'react';
-import { TextButton, ViewMoreButton } from '../Button';
+import { TextButton } from '../Button';
+import { Header3 } from '../Headers';
 
 const ContactInfo = (props: IContact) => {
 
@@ -23,7 +24,7 @@ const ContactInfo = (props: IContact) => {
             </ContactTitleSC>
             {expanded && (
                 <ContactDetailsSC>
-                    <ContactH3SC>Endereços:</ContactH3SC>
+                    <Header3>Endereços:</Header3>
                     <ul>
                         {props.addresses.map((address, index) => (
                             <li key={index}>
@@ -33,7 +34,7 @@ const ContactInfo = (props: IContact) => {
                             </li>
                         ))}
                     </ul>
-                    <ContactH3SC>Telefones:</ContactH3SC><ul>
+                    <Header3>Telefones:</Header3><ul>
                         {props.phones.map((phone) => (
                             <li key={phone.number}>
                                 <p>{PHONE_TYPES_PT_BR[phone.type]}: {phone.number}</p>

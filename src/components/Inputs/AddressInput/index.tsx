@@ -4,6 +4,7 @@ import { Address } from '../../../types/address';
 import { TextButton, RemoveButtonSC } from '../../Button';
 import { AddressInputSC } from './styles';
 import { useState } from 'react';
+import { Header3 } from '../../Headers';
 
 interface IAddressInput extends Address {
     onChange: (address: Address) => void;
@@ -54,7 +55,7 @@ const AddressInput = (props: IAddressInput) => {
     return (
         <AddressInputSC>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                <h3>Endereço {index + 1}</h3>
+                <Header3>Endereço {index + 1}</Header3>
                 {index > 0 && <RemoveButtonSC
                     aria-label='Remover Endereço'
                     type="button"

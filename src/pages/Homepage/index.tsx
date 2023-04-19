@@ -5,6 +5,7 @@ import { IContact } from '../../types/contact';
 import { Link } from 'react-router-dom';
 import { ColorButton } from '../../components/Button';
 import { PageWrapper } from '../../components/PageWrapper';
+import { Header1 } from '../../components/Headers';
 
 
 const Homepage = () => {
@@ -19,7 +20,7 @@ const Homepage = () => {
     }, []);
     return (
         <PageWrapper>
-            <h1>Contatos</h1>
+            <Header1>Contatos</Header1>
             <Link to={'/create'}>
                 <ColorButton>
                     + Criar contato

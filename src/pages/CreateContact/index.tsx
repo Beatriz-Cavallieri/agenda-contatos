@@ -9,6 +9,7 @@ import PhoneInput from '../../components/Inputs/PhoneInput';
 import { AddButtonSC, ColorButton } from '../../components/Button';
 import AddressInput from '../../components/Inputs/AddressInput';
 import { PageWrapper } from '../../components/PageWrapper';
+import { Header1, Header2 } from '../../components/Headers';
 
 const CreateContact = () => {
     const initialAddress: Address = { cep: '', city: '', neighborhood: '', number: '', state: '', street: '' }
@@ -34,7 +35,7 @@ const CreateContact = () => {
 
     const handleRemovePhone = (index: number) => {
         const newPhones = [...phones];
-        newPhones.splice(index, 1);
+        newPhones.splice(index, Header1);
         setPhones(newPhones);
     };
 
@@ -51,7 +52,7 @@ const CreateContact = () => {
 
     const handleRemoveAddress = (index: number) => {
         const newAddresses = [...addresses];
-        newAddresses.splice(index, 1);
+        newAddresses.splice(index, Header1);
         setAddresses(newAddresses);
     };
 
@@ -71,9 +72,9 @@ const CreateContact = () => {
     }
     return (
         <PageWrapper>
-            <h1>Criar contato</h1>
+            <Header1>Criar contato</Header1>
             <FormSC onSubmit={handleSubmit}>
-                <h2>Nome</h2>
+                <Header2>Nome</Header2>
                 <LabelSC>
                     Nome:
                     <InputSC
@@ -84,7 +85,7 @@ const CreateContact = () => {
                 </LabelSC>
 
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <h2>Telefones</h2>
+                    <Header2>Telefones</Header2>
                     <AddButtonSC
                         aria-label='Adicionar telefone'
                         type="button"
@@ -105,7 +106,7 @@ const CreateContact = () => {
                     ))}
 
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <h2>Endereços</h2>
+                    <Header2>Endereços</Header2>
                     <AddButtonSC
                         aria-label='Adicionar telefone'
                         type="button"

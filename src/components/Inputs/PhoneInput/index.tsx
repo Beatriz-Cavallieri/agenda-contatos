@@ -2,6 +2,7 @@ import { Phone, PhoneType } from '../../../types/phone';
 import { InputSC, LabelSC } from '../../../pages/CreateContact/styles';
 import { PhoneInputSC } from './styles';
 import { RemoveButtonSC } from '../../Button';
+import { Header3 } from '../../Headers';
 
 interface IPhoneInput extends Phone {
     onChange: (phone: Phone) => void;
@@ -22,7 +23,7 @@ const PhoneInput = (props: IPhoneInput) => {
     return (
         <PhoneInputSC>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                <h3>Telefone {index + 1}</h3>
+                <Header3>Telefone {index + 1}</Header3>
                 {index > 0 && <RemoveButtonSC
                     type="button"
                     aria-label='Remover telefone'
