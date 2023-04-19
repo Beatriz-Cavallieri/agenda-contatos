@@ -1,0 +1,84 @@
+{
+    "contacts": [
+        {
+            "id": "1",
+            "name": "João da Silva",
+            "addresses": [
+                {
+                    "street": "Rua dos Bobos",
+                    "number": "0",
+                    "complement": "Apto 123",
+                    "neighborhood": "Centro",
+                    "city": "São Paulo",
+                    "state": "SP",
+                    "cep": "01001-000"
+                },
+                {
+                    "street": "Avenida Paulista",
+                    "number": "1000",
+                    "complement": "Conjunto 1501",
+                    "neighborhood": "Bela Vista",
+                    "city": "São Paulo",
+                    "state": "SP",
+                    "cep": "01310-100"
+                }
+            ],
+            "phones": [
+                {
+                    "type": "celular",
+                    "number": "(11) 99999-9999"
+                },
+                {
+                    "type": "fixo",
+                    "number": "(11) 3333-3333"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Maria Oliveira",
+            "addresses": [
+                {
+                    "street": "Rua das Flores",
+                    "number": "10",
+                    "complement": "Casa 2",
+                    "neighborhood": "Jardim Paulista",
+                    "city": "São Paulo",
+                    "state": "SP",
+                    "cep": "01455-000"
+                }
+            ],
+            "phones": [
+                {
+                    "type": "celular",
+                    "number": "(11) 98888-8888"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "name": "Pedro Santos",
+            "addresses": [
+                {
+                    "street": "Rua do Comércio",
+                    "number": "50",
+                    "complement": "",
+                    "neighborhood": "Centro",
+                    "city": "Rio de Janeiro",
+                    "state": "RJ",
+                    "cep": "20010-120"
+                }
+            ],
+            "phones": [
+                {
+                    "type": "celular",
+                    "number": "(21) 99999-9999"
+                },
+                {
+                    "type": "fixo",
+                    "number": "(21) 2222-2222"
+                }
+            ]
+        }
+    ]
+}
