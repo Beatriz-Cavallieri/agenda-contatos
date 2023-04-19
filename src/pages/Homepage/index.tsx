@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import api from '../../services/api';
 import ContatInfo from '../../components/ContactInfo';
 import { IContact } from '../../types/contact';
+import { Link } from 'react-router-dom';
 
 
 const Homepage = () => {
@@ -16,6 +17,7 @@ const Homepage = () => {
     }, []);
     return (
         <div>
+            <Link to={'/create'}>Criar contato</Link>
             {contacts && contacts.map(contact => <ContatInfo {...contact} />)}
         </div>
     )
