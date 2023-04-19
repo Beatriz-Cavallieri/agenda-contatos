@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const FormSC = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  margin: 1rem;
 `;
 
 export const LabelSC = styled.label`
-  margin: 10px 0;
+  margin: 1rem 0;
 `;
 
 export const InputSC = styled.input`
@@ -17,7 +18,7 @@ export const InputSC = styled.input`
 
 
 export const SubmitButtonSC = styled.button`
-  padding: 10px;
+  padding: 1rem;
   margin: 20px;
   background-color: blue;
   color: white;

@@ -6,10 +6,11 @@ import { RemoveButtonSC } from '../../Button';
 interface IPhoneInput extends Phone {
     onChange: (phone: Phone) => void;
     onRemove: () => void;
+    index: number;
 }
 
 const PhoneInput = (props: IPhoneInput) => {
-    const { type, number, onChange, onRemove } = props
+    const { index, type, number, onChange, onRemove } = props
 
     const handleTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         onChange({ ...props, type: e.target.value as PhoneType });
@@ -20,6 +21,16 @@ const PhoneInput = (props: IPhoneInput) => {
     };
     return (
         <PhoneInputSC>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <h3>Telefone {index + 1}</h3>
+                {index > 0 && <RemoveButtonSC
+                    type="button"
+                    aria-label='Remover telefone'
+                    onClick={onRemove}>
+                    x
+                </RemoveButtonSC>
+                }
+            </div>
             <LabelSC>
                 Tipo de telefone:
                 <select
@@ -40,11 +51,6 @@ const PhoneInput = (props: IPhoneInput) => {
                     onChange={handleNumberChange}
                 />
             </LabelSC>
-            <RemoveButtonSC
-                aria-label='Remover telefone'
-                onClick={onRemove}>
-                x
-            </RemoveButtonSC>
         </PhoneInputSC>
     );
 };

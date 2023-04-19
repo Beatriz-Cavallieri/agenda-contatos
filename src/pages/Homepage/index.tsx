@@ -17,6 +17,7 @@ const Homepage = () => {
     }, []);
     return (
         <div>
+            <h1>Contatos</h1>
             <Link to={'/create'}>Criar contato</Link>
             {contacts && contacts.map(contact => <ContatInfo {...contact} />)}
         </div>

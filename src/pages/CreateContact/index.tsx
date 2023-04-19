@@ -51,26 +51,39 @@ const CreateContact = () => {
         onSubmit(newContact);
     }
     return (
-        <FormSC onSubmit={handleSubmit}>
-            <LabelSC>
-                Nome:
-                <InputSC
-                    required
-                    type="text"
-                    value={name}
-                    onChange={handleNameChange}
-                />
-            </LabelSC>
+        <>
+            <h1>Criar contato</h1>
+            <FormSC onSubmit={handleSubmit}>
+                <h2>Nome</h2>
+                <LabelSC>
+                    Nome:
+                    <InputSC
+                        required
+                        type="text"
+                        value={name}
+                        onChange={handleNameChange} />
+                </LabelSC>
 
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-                <h3>Telefone(s)</h3>
-                <AddButtonSC
-                    aria-label='Adicionar telefone'
-                    type="button"
-                    onClick={handleAddPhone}>
-                    +
-                </AddButtonSC>
-            </div>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <h2>Telefones</h2>
+                    <AddButtonSC
+                        aria-label='Adicionar telefone'
+                        type="button"
+                        onClick={handleAddPhone}>
+                        +
+                    </AddButtonSC>
+                </div>
+
+                {(phones.length ? phones : [initialPhone])
+                    .map((phone, index) => (
+                        <PhoneInput
+                            key={index}
+                            index={index}
+                            type={phone.type}
+                            number={phone.number}
+                            onChange={(value) => handlePhoneChange(index, value)}
+                            onRemove={() => handleRemovePhone(index)} />
+                    ))}
 
             {(phones.length ? phones : [initialPhone])
                 .map((phone, index) => (
@@ -85,8 +98,8 @@ const CreateContact = () => {
 
 
 
-            <SubmitButtonSC type="submit">Submit</SubmitButtonSC>
-        </FormSC>
+                <SubmitButtonSC type="submit">Submit</SubmitButtonSC>
+            </FormSC></>
     )
 }
 
